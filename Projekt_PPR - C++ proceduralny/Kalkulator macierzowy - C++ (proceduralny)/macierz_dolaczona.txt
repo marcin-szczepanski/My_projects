@@ -1,0 +1,8 @@
+(k) Macierz dolaczona.
+
+Aby wyznaczyc macierz dolaczona, musisz podac wymiary macierzy, a nastepnie wprowadzic jej elementy.
+!!! Jesli macierz nie bedzie kwadratowa, program wyswietli informacje o nieistnieniu macierzy dolaczonej. !!!
+
+______________________________________________
+
+Aby powrocic do menu glownego, wcisnij "m" i enter.

@@ -1,0 +1,18 @@
+Dzialania na jednej macierzy:
+
+Dostepne dzialania to:
+(a) Mnozenie macierzy przez liczbe.
+(b) Transpozycja macierzy.
+(c) Obliczanie sladu macierzy kwadratowej.
+(d) Obliczanie wyznacznika macierzy.
+(e) Obliczanie rzedu macierzy.
+(f) Postac zredukowana macierzy.
+(g) Macierz dopelnien algebraicznych.
+(h) Macierz dolaczona.
+(i) Macierz odwrotna.
+
+Mozesz wybrac kilka (a nawet wszystkie) dzialan, wpisujac ich litery (w dowolnej kolejnosci) a nastepnie wciskajac enter.
+Uwaga!!! Litery wpisuj bez spacji, jesli wpiszesz ze spacjami, zostana uwzglednione tylko znaki do pierwszej spacji!
+Przyklad: cfahb
+
+Aby powrocic do poprzedniego menu, wcisnij (m) i enter.

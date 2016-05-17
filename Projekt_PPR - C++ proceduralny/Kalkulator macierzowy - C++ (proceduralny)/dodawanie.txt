@@ -1,0 +1,9 @@
+(a) Dodawanie macierzy.
+
+Aby dodac dwie macierze, musisz najpierw wprowadzic wymiary kazdej z nich. Nastepnie musisz wprowadzic kazdy element pierwszej macierzy, a nastepnie drugiej macierzy.
+
+!!! Jezeli wymiary obu macierzy nie beda takie same, program wyswietli blad i poprosi o ponowne wprowadzenie wymiarow. !!!
+
+______________________________________________
+
+Aby powrocic do menu glownego, wcisnij "m" i enter.

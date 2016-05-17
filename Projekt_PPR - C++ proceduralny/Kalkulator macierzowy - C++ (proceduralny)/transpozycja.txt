@@ -1,0 +1,7 @@
+(e) Transpozycja macierzy.
+
+Aby wyznaczyc transponowac macierz, musisz wprowadzic jej wymiary. Nastepnie musisz wprowadzic kazdy element tej macierzy.
+
+______________________________________________
+
+Aby powrocic do menu glownego, wcisnij "m" i enter.

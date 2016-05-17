@@ -1,0 +1,7 @@
+(i) Postac zredukowana macierzy.
+
+Aby wyznaczyc postac zredukowana (schodkowa) macierzy, musisz najpierw podac wymiary macierzy. Nastepnie musisz podac kazdy element tej macierzy.
+
+______________________________________________
+
+Aby powrocic do menu glownego, wcisnij "m" i enter.

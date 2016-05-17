@@ -1,0 +1,7 @@
+(c) Mnozenie macierzy przez liczbe.
+
+Aby pomnozyc macierz przez liczbe, musisz podac ta liczbe oraz wymiary macierzy. Nastepnie musisz wprowadzic kazdy element macierzy.
+
+______________________________________________
+
+Aby powrocic do menu glownego, wcisnij "m" i enter.

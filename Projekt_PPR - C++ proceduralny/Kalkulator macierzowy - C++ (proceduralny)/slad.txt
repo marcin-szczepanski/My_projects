@@ -1,0 +1,9 @@
+(f) Slad macierzy.
+
+Aby obliczyc slad, musisz najpierw podac wymiary macierzy. Nastepnie musisz podac kazdy element tej macierzy.
+
+!!! Jesli wymiary macierzy nie beda rowne, otrzymasz komunikat, ze slad macierzy nie istnieje (slad macierzy to suma elementow na przekatnej glownej macierzy KWADRATOWEJ). !!!
+
+______________________________________________
+
+Aby powrocic do menu glownego, wcisnij "m" i enter.

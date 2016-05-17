@@ -1,0 +1,8 @@
+Na ilu macierzach chcesz dzialac?
+
+Wcisnij odpowiednia liczbe i enter.
+
+(1) Na jednej.
+(2) Na dwoch.
+
+Aby powrocic do menu glownego wcisnij (m) i enter.

@@ -1,0 +1,9 @@
+(d) Mnozenie macierzy.
+
+Aby pomnozyc dwie macierze, musisz najpierw wprowadzic wymiary kazdej z nich. Nastepnie musisz wprowadzic kazdy element pierwszej macierzy, a nastepnie drugiej macierzy.
+
+!!! Jezeli ilosc kolumn pierwszej macierzy nie bedzie taka sama jak ilosc kolumn drugiej macierzy, program wyswietli blad i poprosi o ponowne wprowadzenie wymiarow. !!!
+
+______________________________________________
+
+Aby powrocic do menu glownego, wcisnij "m" i enter.

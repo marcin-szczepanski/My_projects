@@ -1,0 +1,22 @@
+Operacje wykonywalne na kalkulatorze to: dodawanie dwoch macierzy, odejmowanie dwoch macierzy, mnozenie macierzy przez liczbe, mnozenie dwoch macierzy, transpozycja macierzy, wyznaczanie macierzy odwrotnej, obliczanie wyznacznika, obliczanie sladu macierzy kwadratowej, wyznaczanie rzedu macierzy, wyznaczanie macierzy dolaczonej, wyznaczanie macierzy dopelnien algebraicznych, wyznaczanie postaci zredukowanej macierzy.
+
+Instrukcja:
+Aby odczytac instrukcje dla konkretnego dzialania, wcisnij odpowiednia litere i enter.
+(a) Dodawanie macierzy.
+(b) Odejmowanie macierzy.
+(c) Mnozenie macierzy przez liczbe.
+(d) Mnozenie macierzy.
+(e) Transpozycja macierzy.
+(f) Slad macierzy.
+(g) Wyznacznik macierzy.
+(h) Rzad macierzy.
+(i) Postac zredukowana macierzy.
+(j) Macierz dopelnien algebraicznych.
+(k) Macierz dolaczona.
+(l) Macierz odwrotna.
+
+
+Jesli zapoznales(-las) sie z instrukcja, wcisnij (t) i enter.
+
+______________________________________________
+

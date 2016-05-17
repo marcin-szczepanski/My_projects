@@ -1,0 +1,13 @@
+Dzialania na dwoch macierzach:
+
+Dostepne dzialania to:
+
+(a) Dodawanie macierzy.
+(b) Odejmowanie macierzy.
+(c) Mnozenie macierzy.
+
+Mozesz wykonac jedno, dwa lub trzy dzialania jednoczesnie, wpisujac ich litery (w dowolnej kolejnosci) i wciskajac enter.
+Uwaga!!! Litery wpisuj bez spacji, jesli wpiszesz ze spacjami, zostana uwzglednione tylko znaki do pierwszej spacji!
+Przyklad: ca
+
+Aby powrocic do poprzedniego menu, wcisnij (m) i enter.
