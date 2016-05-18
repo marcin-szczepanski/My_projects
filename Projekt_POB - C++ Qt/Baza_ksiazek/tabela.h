@@ -1,3 +1,4 @@
+
 #ifndef TABELA_H
 #define TABELA_H
 
@@ -11,6 +12,7 @@ class Tabela
 public:
     Tabela(QString plik);
     QStringList pobierzWiersz(int n);
+    void edytujWiersz(int n, QStringList wartosci);
     void usunWiersz(int n);
     void wstawWiersz(QStringList wartosci);
     int pobierzLiczbeWierszy();

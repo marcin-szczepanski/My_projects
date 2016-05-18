@@ -15,6 +15,39 @@ QStringList Tabela::pobierzWiersz(int n)
     return wiersz.split(";");
 }
 
+void Tabela::edytujWiersz(int n, QStringList wartosci)
+{
+    QFile tmp("tmp" + mFile.fileName());
+    tmp.open(QIODevice::WriteOnly);
+    for (int i = 0; i < this->pobierzLiczbeWierszy(); i++)
+    {
+        if (i == n)
+        {
+            // validate input
+            for (int i = 0; i < wartosci.count(); i++)
+                wartosci[i] = wartosci[i].replace("\n", "NL").replace(";", ",");
+            // go to end of file
+            tmp.seek(tmp.size());
+            QString wiersz = wartosci.join(";").append("\n");
+            tmp.write(wiersz.toUtf8());
+        }
+        else
+        {
+            QString row = this->pobierzWiersz(i).join(";").append("\n");
+            tmp.write(row.toUtf8());
+        }
+    }
+    // replace old file with updated one
+    QString nazwaPliku = mFile.fileName();
+    mFile.remove();
+    tmp.rename(nazwaPliku);
+    tmp.close();
+    mFile.open(QIODevice::ReadWrite);
+
+
+
+}
+
 void Tabela::usunWiersz(int n)
 {
     QFile tmp("tmp" + mFile.fileName());

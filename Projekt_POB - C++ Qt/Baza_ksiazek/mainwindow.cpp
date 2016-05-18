@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "tabela.h"
+#include "statystyka.h"
 
 void MainWindow::wczytajDaneDoProgramu()
 {
@@ -214,6 +215,8 @@ void MainWindow::on_edytujButton_clicked()
     int r = ui->lista_ksiazek->currentRow();
     if (r != -1)
     {
+
+
         Tabela tabela("baza.txt");
 
         QString st;
@@ -315,10 +318,41 @@ void MainWindow::on_edytujButton_clicked()
         ui->lista_ksiazek->setItem(r,9,new QTableWidgetItem(okl));
         ui->lista_ksiazek->setItem(r,10,new QTableWidgetItem(roz));
 
-        tabela.usunWiersz(r);
-        tabela.wstawWiersz(QStringList() << st << tyt << aut << gat << ilstr << wyd << rok << kl << form << okl << roz);
+        tabela.edytujWiersz(r,QStringList() << st << tyt << aut << gat << ilstr << wyd << rok << kl << form << okl << roz);
 
     }
     else
         ui->infoBox->setText("Nie wybrano pozycji!");
+}
+
+void MainWindow::on_tabWidget_tabBarClicked(int index)
+{
+    if (index==1)
+    {
+        QTableWidget *wsk=ui->lista_ksiazek;
+        int r=wsk->rowCount();
+
+        Statystyka czyt(r,0,"W TRAKCIE CZYTANIA");
+        ui->stat_czyt->setText(QString::number(czyt.policzIleSzukanych(wsk)));
+
+        Statystyka przeczyt(r,0,"PRZECZYTANE");
+        ui->stat_przeczyt->setText(QString::number(przeczyt.policzIleSzukanych(wsk)));
+
+        Statystyka nieprzeczyt(r,0,"NIEPRZECZYTANE");
+        ui->stat_nieczyt->setText(QString::number(nieprzeczyt.policzIleSzukanych(wsk)));
+
+        Statystyka dokupienia(r,0,"DO KUPIENIA");
+        ui->stat_doKupie->setText(QString::number(dokupienia.policzIleSzukanych(wsk)));
+
+        Statystyka ilePapier(r,7,"wersja papierowa");
+        ui->ilePap->setText(QString::number(ilePapier.policzIleSzukanych(wsk)));
+
+        Statystyka ileEbookow(r,7,"e-book");
+        ui->ile_Ebo->setText(QString::number(ileEbookow.policzIleSzukanych(wsk)));
+
+        Statystyka ileAudioB(r,7,"audiobook");
+        ui->ileAudio->setText(QString::number(ileAudioB.policzIleSzukanych(wsk)));
+
+        ui->razem->setText(QString::number(r));
+    }
 }

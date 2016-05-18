@@ -18,13 +18,15 @@ SOURCES += main.cpp\
     papierowa.cpp \
     ebook.cpp \
     audiobook.cpp \
-    tabela.cpp
+    tabela.cpp \
+    statystyka.cpp
 
 HEADERS  += mainwindow.h \
     ksiazka.h \
     papierowa.h \
     ebook.h \
     audiobook.h \
-    tabela.h
+    tabela.h \
+    statystyka.h
 
 FORMS    += mainwindow.ui
