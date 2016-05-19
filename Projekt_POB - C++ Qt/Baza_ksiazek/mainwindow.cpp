@@ -5,7 +5,7 @@
 
 void MainWindow::wczytajDaneDoProgramu()
 {
-    QFile plik="baza.txt";
+    QFile plik("baza.txt");
     plik.open(QIODevice::ReadWrite);
     QString w;
     w=QString(plik.readLine());
