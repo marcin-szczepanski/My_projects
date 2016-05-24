@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+	margin: 1rem;
+    font-family: 'Lato', sans-serif;
+	background-color: #2fa5ef;
+	color: #FFF;
+	font-size: 1rem;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+div {
+	line-height: 2rem;
+	background-color: #0e83cd;
+}
+
+#container {
+	width: 48rem;
+	background-color: #0d72bc;
+	margin: 0 auto;
+	border-radius: 1rem;
+	padding: 0rem 2rem;
+	border: 0.25rem solid #fff;
+}
+
+#title {
+	height: 5rem;
+	vertical-align: middle;
+	padding: 1rem;
+	background-color: #0d72bc;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 2rem;
+}
+
+#okno_info, #okno_powitalne, #okno_podsumowania {
+	border: 0.25rem solid #fff;
+	margin: 1rem;
+	text-align: center;
+	padding: 1rem;
+	border-radius: 1rem;
+}
+
+#ileZetonow, #ileZetonow1 {
+    width: 9rem;
+    height: 2rem;
+}
+
+input[placeholder], input[text] {
+	color: #0d72bc;
+}
+
+button {
+	height: 2rem;
+	background-color: #0e83cd;
+	transition: 800ms;
+	border: 0.2rem solid #FFF;
+	color: #FFF;
+	font-weight: bold;
+	border-radius: 1rem;
+}
+
+button:hover, button:active {
+	background-color: #FFF;
+	color: #0e83cd;
+}
+
+button:disabled {
+	color: #949491;
+	background-color: #C2C2BE;
+}

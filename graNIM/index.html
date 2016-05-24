@@ -1,0 +1,45 @@
+<!doctype html> 
+<html>
+    <head>
+        <title>Gra NIM</title>
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,900|Josefin+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+		<div id="container">
+			<div id="title" class="bold"><h1>Uproszczona gra NIM</h1></div> 
+			<div id="okno_powitalne">
+				<span id="witaj">Na ilu żetonach chcesz grać?</span>
+				<input id="ileZetonow" type="text" placeholder="Wpisz liczbę żetonów" />
+				<button id="ok" type="submit">Graj!</button>
+			</div>
+			<div id="okno_info">
+				W trakcie jednej rundy gracz może wziąć 1 lub 2 żetony.
+				<br>
+				Przegrywa gracz który weźmie ostatni żeton.
+				<br>
+				Liczba żetonów na stole: <span id="ile_zetonow" class="bold"></span>.
+				<br>
+				Teraz gra: <span id="ktoGra" class="bold"></span>
+				<br>
+				<span id="ostatni_ruch">
+					Liczba ostatnio zabranych żetonów ze stołu przez 
+					<span id="kto" class="bold"></span>: <span id="ile" class="bold"></span>.
+				</span>
+				<br>
+				<button type="submit" id="1_zeton">Weź 1 żeton</button>
+				<button type="submit" id="2_zeton">Weź 2 żetony</button>
+			</div>
+			<div id="okno_podsumowania">
+				Wygrał: <span id="kto_wygral" class="bold"></span> .
+				<br>
+				<span id="witaj1">Jeśli chcesz grać ponownie wpisz, na ilu żetonach chcesz grać!</span>
+				<br>
+				<input id="ileZetonow1" type="text" placeholder="Wpisz liczbę żetonów" />
+				<button id="ok1" type="submit">Graj!</button>
+			</div>
+		</div>
+	    <script src="app.js"></script>
+	</body>
+</html>
