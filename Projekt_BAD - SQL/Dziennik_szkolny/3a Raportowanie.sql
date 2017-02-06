@@ -5,6 +5,9 @@ drop view NauczycieleZPrzedmiotami
 IF OBJECT_ID('UczniowieWSzkole') IS NOT NULL 
 drop view UczniowieWSzkole
 
+IF OBJECT_ID('Klasy') IS NOT NULL 
+drop view Klasy
+
 IF OBJECT_ID('doUsuniecia') IS NOT NULL 
 drop function doUsuniecia
 
@@ -26,12 +29,23 @@ as
 	order by n.Nazwisko
 ----------------
 go
---- Lista uczniów w szkole
+--- Lista uczniów w szkole:
 create view UczniowieWSzkole(Rok, Klasa, Nazwisko, Imiê)
 as
 	select distinct top(100) percent k.Rok, k.Nazwa, u.Nazwisko, u.Imiê
 	from Klasa k inner join Uczeñ u
 	on k.idKlasy = u.Klasa
+	order by k.Rok
+----------------
+go
+--- Lista klas z profilami i wychowawcami:
+create view Klasy(Rok, Klasa, Profil, Wychowawca)
+as
+	select distinct top(100) percent k.Rok, k.Nazwa, p.Nazwa, n.Nazwisko + ' ' + n.Imiê
+	from Profil p inner join Klasa k
+	on p.idProfilu = k.Profil
+	inner join Nauczyciel n
+	on k.Wychowawca = n.idNauczyciela
 	order by k.Rok
 ----------------
 go
