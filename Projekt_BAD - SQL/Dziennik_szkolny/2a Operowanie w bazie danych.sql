@@ -8,6 +8,9 @@ drop procedure dodajNauczyciela
 IF OBJECT_ID('dodajPrzedmiot') IS NOT NULL 
 drop procedure dodajPrzedmiot
 
+IF OBJECT_ID('zapiszKlaseNaLekcje') IS NOT NULL 
+drop procedure zapiszKlaseNaLekcje
+
 IF OBJECT_ID('przydzielPrzedmiotProfilowi') IS NOT NULL 
 drop procedure przydzielPrzedmiotProfilowi
 
@@ -141,6 +144,29 @@ begin
 		set @Aktywny = 1
 		insert into Przedmiot values
 		(@idPrzedmiotu, @Nazwa, @Poziom, @iloœæGodzin, @Aktywny)
+	end
+end
+----------------
+go
+--- Zapisywanie klasy na lekcjê:
+create procedure zapiszKlaseNaLekcje
+	@Dzieñ varchar(20),
+	@Godzina time(0),
+	@Klasa int,
+	@Przedmiot int,
+	@Nauczyciel int
+as
+begin
+	if exists (select * from Lekcja where ((Dzieñ = @Dzieñ) and (Godzina = @Godzina) and (Przedmiot = @Przedmiot) and (Nauczyciel = @Nauczyciel)))
+		print 'Ta lekcja jest ju¿ zajêta.'
+	else if exists (select * from Lekcja where ((Dzieñ = @Dzieñ) and (Godzina = @Godzina) and (Klasa = @Klasa)))
+		print 'Klasa jest ju¿ zapisana na inn¹ lekcjê.'
+	else
+	begin
+		declare @idLekcji int
+		set @idLekcji = (select max(idLekcji)+1 from Lekcja)
+		insert into Lekcja values
+		(@idLekcji, @Dzieñ, @Godzina, @Klasa, @Przedmiot, @Nauczyciel)
 	end
 end
 ----------------

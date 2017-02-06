@@ -1,6 +1,7 @@
 exec dodajUcznia 'Maria', 'Bednarska', 3, '97022415371', 'Gdañska', 3, 1, 'Jan', 'Ewa' --- przy drugim i kolejnym wywo³aniu nie dodamy tego samego ucznia
 exec dodajNauczyciela 'Jan', 'Wójcik', 'G³ogowska', 55, 3  --- przy drugim i kolejnym wywo³aniu nie dodamy tego samego nauczyciela
 exec dodajPrzedmiot 'Historia', 'podstawowy', 2 --- przy drugim i kolejnym wywo³aniu nie dodamy tego samego przedmiotu
+exec zapiszKlaseNaLekcje 'pt', '11:45', 4, 4, 1 --- przy drugim i kolejnym wywo³aniu nie dodamy tej samej lekcji
 exec przydzielPrzedmiotProfilowi 5, 1
 exec przydzielPrzedmiotNauczycielowi 5, 3
 exec przydzielWychowawce 1, 5
@@ -20,6 +21,7 @@ exec usunUcznia 3
 exec usunNauczyciela 3
 exec usunPrzedmiot 4
 ---- Gdy podamy nieprawid³owe dane:
+exec zapiszKlaseNaLekcje 'pt', '11:45', 4, 1, 4 --- gdy klasa jest zapisana na inn¹ lekcjê w tym samym czasie
 exec przydzielPrzedmiotProfilowi 55, 1
 exec przydzielPrzedmiotNauczycielowi 55, 3
 exec przydzielWychowawce 8, 5

@@ -8,6 +8,9 @@ drop view UczniowieWSzkole
 IF OBJECT_ID('Klasy') IS NOT NULL 
 drop view Klasy
 
+IF OBJECT_ID('PlanZajec') IS NOT NULL 
+drop view PlanZajec
+
 IF OBJECT_ID('doUsuniecia') IS NOT NULL 
 drop function doUsuniecia
 
@@ -47,6 +50,24 @@ as
 	inner join Nauczyciel n
 	on k.Wychowawca = n.idNauczyciela
 	order by k.Rok
+----------------
+go
+--- Plan zajêæ:
+create view PlanZajec(Dzieñ, Godzina, Rok, Klasa, Przedmiot, Poziom, Nauczyciel)
+as
+	select top(100) percent l.Dzieñ, l.Godzina, k.Rok, k.Nazwa, p.Nazwa, p.Poziom, n.Nazwisko + ' ' + n.Imiê
+	from Klasa k inner join Lekcja l
+	on k.idKlasy = l.Klasa
+	inner join Przedmiot p
+	on l.Przedmiot = p.idPrzedmiotu
+	inner join Nauczyciel n
+	on l.Nauczyciel = n.idNauczyciela
+	order by case when l.Dzieñ = 'pon' then '1'
+		when l.Dzieñ = 'wt' then '2'
+		when l.Dzieñ = 'œr' then '3'
+		when l.Dzieñ = 'czw' then '4'
+		when l.Dzieñ = 'pt' then '5'
+		else l.Dzieñ end asc
 ----------------
 go
 --- Osoby do usuniêcia ze szko³y:
