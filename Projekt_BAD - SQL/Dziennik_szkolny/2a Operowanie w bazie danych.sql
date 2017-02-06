@@ -177,13 +177,18 @@ create procedure przydzielPrzedmiotProfilowi
 	@idProfilu int
 as
 begin
-	if exists (select * from PrzedmiotProfil where ((Profil = @idProfilu) and (Przedmiot = @idPrzedmiotu)))
-	begin
-		insert into PrzedmiotProfil values
-		(@idPrzedmiotu, @idProfilu)
-	end
-	else
+	if ((not exists (select * from Profil where (idProfilu = @idProfilu))) or (not exists (select * from Przedmiot where (idPrzedmiotu = @idPrzedmiotu))))
 		print 'Przedmiot lub profil nie istnieje w bazie.'
+	else
+	begin
+		if exists (select * from PrzedmiotProfil where ((Profil = @idProfilu) and (Przedmiot = @idPrzedmiotu)))
+			print 'Przedmiot zosta³ ju¿ przypisany do profilu.'
+		else
+		begin
+			insert into PrzedmiotProfil values
+			(@idPrzedmiotu, @idProfilu)
+		end
+	end
 end
 ----------------
 go
@@ -193,15 +198,20 @@ create procedure przydzielPrzedmiotNauczycielowi
 	@idPrzedmiotu int
 as
 begin
-	if exists (select * from NauczycielPrzedmiot where ((Nauczyciel = @idNauczyciela) and (Przedmiot = @idPrzedmiotu)))
-	begin
-		declare @idPary int
-		set @idPary = (select max(idPary)+1 from NauczycielPrzedmiot)
-		insert into NauczycielPrzedmiot values
-		(@idPary, @idNauczyciela, @idPrzedmiotu)
-		end
-	else
+	if ((not exists (select * from Nauczyciel where (idNauczyciela = @idNauczyciela))) or (not exists (select * from Przedmiot where (idPrzedmiotu = @idPrzedmiotu))))
 		print 'Nauczyciel lub przedmiot nie istnieje w bazie.'
+	else
+	begin
+		if exists (select * from NauczycielPrzedmiot where ((Nauczyciel = @idNauczyciela) and (Przedmiot = @idPrzedmiotu)))
+			print 'Przedmiot ju¿ zosta³ przydzielony nauczycielowi.'
+		else
+		begin
+			declare @idPary int
+			set @idPary = (select max(idPary)+1 from NauczycielPrzedmiot)
+			insert into NauczycielPrzedmiot values
+			(@idPary, @idNauczyciela, @idPrzedmiotu)
+		end
+	end
 end
 ----------------
 go
